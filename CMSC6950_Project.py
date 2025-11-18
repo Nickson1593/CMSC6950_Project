@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import plotly.graph_objects as go
 from scipy.interpolate import griddata
 
 # Set fonts
@@ -13,5 +14,14 @@ data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
 X = data[:, 0]
 Y = data[:, 1]
 Z = data[:, 2]
+
+#Create X, Y Mesh
+x = np.linspace(X.min(), X.max(), 50)
+y = np.linspace(Y.min(), Y.max(), 50)
+X1, Y1 = np.meshgrid(x, y)
+
+#Apply Z-Values to XY Mesh
+Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
+
 
 
