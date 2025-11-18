@@ -8,3 +8,10 @@ plt.rc('font', family='serif', size=15)
 
 # Load data from file
 data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
+
+#Establish X, Y, Z Variables
+X = data[:, 0]
+Y = data[:, 1]
+Z = data[:, 2]
+
+
