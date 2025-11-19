@@ -26,14 +26,14 @@ Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
 #Create 3D Surface Using Plotly
 fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=Z1,colorscale='hot')])
 
-#Update the 3D Surface Layout
-fig.update_layout(scene=dict(xaxis_title='Easting (m)', 
-		  yaxis_title='Northing (m)'), 
-                  width=1200, height=1000)
+#Update the 3D Surface Layout 
+fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
+                  yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),
+                  zaxis=dict(title='Thickness (m)', range=[0,15850])), 
+                  width=1000, height=800)
                   
-#Set Axes Format
-fig.update_xaxes(tickformat="none",range=[420000, 995000])
-fig.update_yaxes(tickformat="none",range=[5100000, 5800000])
+#Update the Aspect Ratio
+fig.update_layout(scene=dict(aspectmode='manual', aspectratio=dict(x=2,y=2,z=0.75)))
 
 #Show Figure
 fig.show()
