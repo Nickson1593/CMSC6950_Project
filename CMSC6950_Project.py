@@ -31,4 +31,8 @@ fig.update_layout(scene=dict(xaxis_title='Easting (m)',
 		  yaxis_title='Northing (m)'), 
                   width=1200, height=1000)
                   
+#Set Axes Format
+fig.update_xaxes(tickformat="none",range=[420000, 995000])
+fig.update_yaxes(tickformat="none",range=[5100000, 5800000])
+
 
