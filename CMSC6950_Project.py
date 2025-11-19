@@ -26,3 +26,9 @@ Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
 #Create 3D Surface Using Plotly
 fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=Z1,colorscale='hot')])
 
+#Update the 3D Surface Layout
+fig.update_layout(scene=dict(xaxis_title='Easting (m)', 
+		  yaxis_title='Northing (m)'), 
+                  width=1200, height=1000)
+                  
+
