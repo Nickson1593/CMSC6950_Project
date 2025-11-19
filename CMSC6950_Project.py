@@ -24,7 +24,7 @@ X1, Y1 = np.meshgrid(x, y)
 Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
 
 #Create 3D Surface Using Plotly
-fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=Z1,colorscale='hot')])
+fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=Z1,colorscale='hot', colorbar=dict(title='Crustal Thickness (m)'))])])
 
 #Update the 3D Surface Layout 
 fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
