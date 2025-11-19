@@ -35,4 +35,7 @@ fig.update_layout(scene=dict(xaxis_title='Easting (m)',
 fig.update_xaxes(tickformat="none",range=[420000, 995000])
 fig.update_yaxes(tickformat="none",range=[5100000, 5800000])
 
+#Show Figure
+fig.show()
+
 
