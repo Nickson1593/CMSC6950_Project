@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as go
 from scipy.interpolate import griddata
+from scipy.ndimage import gaussian_filter
 
 # Set fonts
 plt.rc('text', usetex=True)
@@ -23,13 +24,16 @@ X1, Y1 = np.meshgrid(x, y)
 #Apply Z-Values to XY Mesh
 Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
 
+#Apply Gaussian Filter to Smooth Z1
+smoothed_Z1 = gaussian_filter(Z1, sigma=0.2)
+
 #Create 3D Surface Using Plotly
-fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=Z1,colorscale='hot', colorbar=dict(title='Crustal Thickness (m)'))])])
+fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='hot', colorbar=dict(title='Crustal Thickness (msec)'))])])
 
 #Update the 3D Surface Layout 
 fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
                   yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),
-                  zaxis=dict(title='Thickness (m)', range=[0,15850])), 
+                  zaxis=dict(title='Thickness (msec)', range=[0,15850])), 
                   width=1000, height=800)
                   
 #Update the Aspect Ratio
