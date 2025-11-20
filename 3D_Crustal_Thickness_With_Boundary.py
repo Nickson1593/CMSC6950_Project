@@ -46,3 +46,10 @@ Y_clean = data_clean[:, 1]
 Z_clean = data_clean[:, 2]
 coordinates_clean = data_clean[:, :2]
 
+#Create Masked Mesh Grid
+x = np.linspace(X_clean.min(), X_clean.max(), 100)
+y = np.linspace(Y_clean.min(), Y_clean.max(), 100)
+
+X1, Y1 = np.meshgrid(x, y)
+
+
