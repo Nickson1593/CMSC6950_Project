@@ -28,7 +28,7 @@ Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
 smoothed_Z1 = gaussian_filter(Z1, sigma=0.2)
 
 #Create 3D Surface Using Plotly
-fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='hot', colorbar=dict(title='Crustal Thickness (msec)'))])])
+fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='Spectral', colorbar=dict(title='Crustal Thickness (msec)'))])])
 
 #Update the 3D Surface Layout 
 fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
