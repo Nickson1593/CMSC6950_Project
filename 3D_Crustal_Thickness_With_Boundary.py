@@ -52,4 +52,8 @@ y = np.linspace(Y_clean.min(), Y_clean.max(), 100)
 
 X1, Y1 = np.meshgrid(x, y)
 
+#Use scipy.interpolate (griddata) to Interpolate Masked XYZ Data
+Z1_clean = griddata(coordinates_clean, Z_clean, (X1, Y1), method='cubic')
+
+
 
