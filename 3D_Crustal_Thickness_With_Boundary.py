@@ -32,4 +32,8 @@ masked_data = data.copy()
 #Apply Mask to Crustal Thickness Data (Make XY Points Outside of the Boundary = NaN)
 masked_data[~is_inside] = np.nan
 
+#Use Pandas to Create a Data Frame and Delete Values = NaN
+df = pd.DataFrame(masked_data)
+df_cleaned = df.dropna()
 
+#
