@@ -36,4 +36,13 @@ masked_data[~is_inside] = np.nan
 df = pd.DataFrame(masked_data)
 df_cleaned = df.dropna()
 
-#
+#Save & Load New XYZ File 
+df_cleaned.to_csv('cleaned_XYZ.csv', index=False)
+data_clean = np.loadtxt('cleaned_XYZ.txt')
+
+#Establish Masked Crustal Thickness XYZ Variables
+X_clean = data_clean[:, 0]
+Y_clean = data_clean[:, 1]
+Z_clean = data_clean[:, 2]
+coordinates_clean = data_clean[:, :2]
+
