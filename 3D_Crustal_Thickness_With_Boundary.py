@@ -55,5 +55,9 @@ X1, Y1 = np.meshgrid(x, y)
 #Use scipy.interpolate (griddata) to Interpolate Masked XYZ Data
 Z1_clean = griddata(coordinates_clean, Z_clean, (X1, Y1), method='cubic')
 
+#Smooth Interpolation
+smoothed_Z1_clean = gaussian_filter(Z1_clean, sigma=0.2)
+
+
 
 
