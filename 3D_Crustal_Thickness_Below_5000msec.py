@@ -58,8 +58,13 @@ Rifts_5000 = np.loadtxt('Rift_Mask_5000.txt')
 X_5000 = Rifts_5000[:, 0]
 Y_5000 = Rifts_5000[:, 1]
 Z_5000 = Rifts_5000[:, 2]
-coordinates_5000 = Rifts_5000[:, :2]
 
+#Plot 3D Crustal Thickness Data Below 5000 msec (go.Scatter3d)
+fig = go.Figure(data=[go.Scatter3d(x=X_5000, y=Y_5000, z=Z_5000, mode='markers', marker=dict(size=2, color=Z_5000, colorscale='Spectral', colorbar=dict(title='Crustal Thickness below 5000 msec')))])
+fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
+                  yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),zaxis=dict(title='Thickness (msec)', range=[0,15000])), width=1000, height=800)
+fig.update_layout(scene=dict(aspectmode='manual', aspectratio=dict(x=2,y=2,z=0.75)))
+fig.show()
 
 
 
