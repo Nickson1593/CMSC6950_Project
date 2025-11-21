@@ -35,3 +35,8 @@ df_cleaned = df.dropna()
 df_cleaned.to_csv('cleaned_XYZ.csv', index=False)
 data_clean = np.loadtxt('cleaned_XYZ.txt')
 
+#Establish Masked Crustal Thickness XYZ Variables
+X_clean = data_clean[:, 0]
+Y_clean = data_clean[:, 1]
+Z_clean = data_clean[:, 2]
+coordinates_clean = data_clean[:, :2]
