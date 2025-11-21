@@ -35,8 +35,24 @@ df_cleaned = df.dropna()
 df_cleaned.to_csv('cleaned_XYZ.csv', index=False)
 data_clean = np.loadtxt('cleaned_XYZ.txt')
 
-#Establish Masked Crustal Thickness XYZ Variables
-X_clean = data_clean[:, 0]
-Y_clean = data_clean[:, 1]
-Z_clean = data_clean[:, 2]
-coordinates_clean = data_clean[:, :2]
+#Make Copy of Masked Crustal Thickness Data to Apply Thickness Mask
+Rift_masks = data_clean.copy()
+
+#Establish Z Values from Rift_masks
+Z_mask = Rift_masks[:, 2]
+
+#Create Crustral Thickness Mask for Z Values Above 5000 msec
+threshold = 5000
+Rifts_mask_5000 = Z_mask > threshold
+Rift_masks[Rifts_mask_5000, 2] = np.nan
+df_mask = pd.DataFrame(Rift_masks)
+
+#Remove NaN Values Set by Crustal Thickness Mask
+df_5000 = df_mask.dropna()
+
+#Save & Load New Masked XYZ File 
+df_5000.to_csv('Rift_Mask_5000.csv', index=False)
+Rifts_5000 = np.loadtxt('Rift_Mask_5000.txt')
+
+
+
