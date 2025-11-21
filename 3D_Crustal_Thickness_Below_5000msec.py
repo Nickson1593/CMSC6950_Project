@@ -54,5 +54,13 @@ df_5000 = df_mask.dropna()
 df_5000.to_csv('Rift_Mask_5000.csv', index=False)
 Rifts_5000 = np.loadtxt('Rift_Mask_5000.txt')
 
+#Establish New XYZ Variables for Rift_Mask_5000.txt
+X_5000 = Rifts_5000[:, 0]
+Y_5000 = Rifts_5000[:, 1]
+Z_5000 = Rifts_5000[:, 2]
+coordinates_5000 = Rifts_5000[:, :2]
+
+
+
 
 
