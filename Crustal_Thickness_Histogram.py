@@ -9,8 +9,8 @@ data = pd.read_csv('Crustal_Thickness_CMSC6950.txt')
 Crustal_Thickness = data['Z'].values
 
 #Define Bin Ranges for Crustal Thickness
-bins = [0, 1.4, 2.8, 4.2, 5.6, 7.0, 8.4, 9.8, 11.2, 12.6, 14, 15.4, 16.8]
-bins_labels = ['0-1.4 km', '1.4-2.8 km', '2.8-4.2 km', '4.2-5.6 km', '5.6-7.0 km', '7.0-8.4 km', '8.4-9.8 km', '9.8-11.2 km', '11.2-14 km', '14-15.4 km', '15.4-16.8 km']
+bins = [0, 1.4, 2.8, 4.2, 5.6, 7.0, 8.4, 9.8, 11.2]
+bins_labels = ['0-1.4 km', '1.4-2.8 km', '2.8-4.2 km', '4.2-5.6 km', '5.6-7.0 km', '7.0-8.4 km', '8.4-9.8 km', '9.8-11.2 km']
 
 #Calculate Percentages of Points Within Each Range
 counts, range_edges = np.histogram(Crustal_Thickness, bins=bins)
@@ -21,8 +21,16 @@ Percentages = (counts / Total_Points) * 100
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize = (10, 6))
 
 #Subplot 1 "Count of Data Points for Ranges of Crustal Thickness"
-ax1.hist (Crustal_Thickness, bins=bins, color='black', edgecolor='black')
+ax1.hist (Crustal_Thickness, bins=bins, color='blue', edgecolor='black')
+ax1.set_title('Count of Data Points for Ranges of Crustal Thickness', fontsize=18)
+ax1.set_xlabel('Crustal Thickness (km)', fontsize=14)
+ax1.set_ylabel('Number of Data Points', fontsize=14)
+ax1.set_xticks(bins)
 
 
 #Subplot 2 "Percentage of Total Data Points Found in Each Range of Crustal Thickness"
 ax2.hist (bins_labels, Percentages, color='red', edgecolor='black')
+ax2.set_title('Percentage of Total Data Points Found in Each Range of Crustal Thickness"', fontsize=18)
+ax2.set_xlabel('Range of Crustal Thickness (km)', fontsize=14)
+ax2.set_ylabel('Percentage of Total Data Points (%)', fontsize=14)
+ax2.set_xticks(bins_labels)
