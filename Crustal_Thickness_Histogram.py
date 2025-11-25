@@ -39,6 +39,10 @@ ax2.set_xticks(bins_labels)
 
 #Add Percentage Values Above Bars
 for i, count in enumerate(counts):
-    ax2.text(i, percentages[i] + 1, f'{Percentages[i]:. 1f}%', ha='center', va='top')  
-    
+    ax2.text(i, percentages[i] + 1, f'{Percentages[i]:. 1f}', ha='center', va='top')
+
+#Format Layout
+plt.tight_layout()
+plt.show()
+ 
     
