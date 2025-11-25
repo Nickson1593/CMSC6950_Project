@@ -17,4 +17,12 @@ counts, range_edges = np.histogram(Crustal_Thickness, bins=bins)
 Total_Points = len(Crustal_Thickness)
 Percentages = (counts / Total_Points) * 100
 
+#Setup Subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize = (10, 6))
 
+#Subplot 1 "Count of Data Points for Ranges of Crustal Thickness"
+ax1.hist (Crustal_Thickness, bins=bins, color='black', edgecolor='black')
+
+
+#Subplot 2 "Percentage of Total Data Points Found in Each Range of Crustal Thickness"
+ax2.hist (bins_labels, Percentages, color='red', edgecolor='black')
