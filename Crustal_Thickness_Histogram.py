@@ -27,10 +27,18 @@ ax1.set_xlabel('Crustal Thickness (km)', fontsize=14)
 ax1.set_ylabel('Number of Data Points', fontsize=14)
 ax1.set_xticks(bins)
 
+for i, count in enumerate(Total_Points):
+    ax1.text(i, [i] + 1, f'{Total_Points[i]:. 1f}%', ha='center', va='top')
 
 #Subplot 2 "Percentage of Total Data Points Found in Each Range of Crustal Thickness"
 ax2.hist (bins_labels, Percentages, color='red', edgecolor='black')
-ax2.set_title('Percentage of Total Data Points Found in Each Range of Crustal Thickness"', fontsize=18)
+ax2.set_title('Percentage of Total Data Points For Range of Crustal Thickness"', fontsize=18)
 ax2.set_xlabel('Range of Crustal Thickness (km)', fontsize=14)
 ax2.set_ylabel('Percentage of Total Data Points (%)', fontsize=14)
 ax2.set_xticks(bins_labels)
+
+#Add Percentage Values Above Bars
+for i, count in enumerate(counts):
+    ax2.text(i, percentages[i] + 1, f'{Percentages[i]:. 1f}%', ha='center', va='top')  
+    
+    
