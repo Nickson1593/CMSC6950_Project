@@ -30,7 +30,7 @@ ax.set_xticks(bins_labels)
 #Add Percentage Values Above Bars
 for i, bar in enumerate(bars):
     height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width() / 2, height, f'{Percentages[i]:.1f}%', ha='center', va='bottom')
+    ax.text(bar.get_x() + bar.get_width() / 2, height, f'{Percentages[i]:.1f}%', ha='center', va='bottom', fontsize=12)
 
 #Format Layout
 plt.tight_layout()
