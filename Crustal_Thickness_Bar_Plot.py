@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load data from file
-data = pd.read_csv('Crustal_Thickness_With_Boundary_XYZ.txt')
+data = pd.read_csv('Crustal_Thickness_With_Boundary_XYZ.txt', sep='\s+', names=['X', 'Y', 'Z'])
 
 #Establish Z Variable
 Crustal_Thickness = data['Z'].values
