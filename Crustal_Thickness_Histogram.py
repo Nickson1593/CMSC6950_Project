@@ -18,19 +18,21 @@ Total_Points = len(Crustal_Thickness)
 Percentages = (counts / Total_Points) * 100
 
 #Setup Bar Plot
-fig, ax = plt.subplots(figsize=(10,6))
+fig, ax = plt.subplots(figsize=(12,10))
 
 #Plot "Count of Data Points for Ranges of Crustal Thickness"
 bars = ax.bar (bins_labels, counts, color='blue', edgecolor='black', width = 0.9)
-ax.set_title('Count of Data Points for Ranges of Crustal Thickness', fontsize=18)
-ax.set_xlabel('Crustal Thickness (msec)', fontsize=14)
-ax.set_ylabel('Number of Data Points', fontsize=14)
+ax.set_title('Count of Data Points for Ranges of Crustal Thickness', fontsize=24)
+ax.set_xlabel('Crustal Thickness (msec)', fontsize=18)
+ax.set_ylabel('Number of Data Points', fontsize=18)
 ax.set_xticks(bins_labels)
+ax.set_xticklabels(bins_labels, rotation=20, fontsize=14)
+ax.tick_params(axis='y', labelsize=14
 
 #Add Percentage Values Above Bars
 for i, bar in enumerate(bars):
     height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width() / 2, height, f'{Percentages[i]:.1f}%', ha='center', va='bottom', fontsize=12)
+    ax.text(bar.get_x() + bar.get_width() / 2, height + 1200, f'{Percentages[i]:.1f}%', ha='center', va='bottom', fontsize=14)
 
 #Format Layout
 plt.tight_layout()
