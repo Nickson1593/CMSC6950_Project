@@ -8,7 +8,7 @@ data = pd.read_csv('Crustal_Thickness_CMSC6950.txt')
 #Establish Z Variable
 Crustal_Thickness = data['Z'].values
 
-#Compute meaningful statistics
+#Compute Meaningful Statistics
 mean_crustal_thickness = np.mean(Crustal_Thickness)
 median_crustal_thickness = np.median(Crustal_Thickness)
 std_dev_crustal_thickness= np.std(Crustal_Thickness)
@@ -33,6 +33,13 @@ ax.set_ylabel('Number of Data Points', fontsize=18)
 ax.set_xticks(bins_labels)
 ax.set_xticklabels(bins_labels, rotation=20, fontsize=14)
 ax.tick_params(axis='y', labelsize=14
+
+#Add Meaninful Statistics to Plot
+ax.axhline(mean_crustal_thickness, color='red', linestyle='-.', linewidth=2, label=f'Mean Crustal Thickness: {mean_crustal_thickness:.2f} msec')
+ax.axhline(median_crustal_thickness, color='Magenta', linestyle=':', linewidth=3, label=f'Median Crustal Thickness: {median_crustal_thickness:.2f} msec')
+ax.axhline(std_dev_crustal_thickness, color='Orange', linestyle='-', linewidth=2, label=f'Standard Deviation Crustal Thickness: {std_dev_crustal_thickness:.2f} msec')
+
+ax.legend(fontsize=14)
 
 #Add Percentage Values Above Bars
 for i, bar in enumerate(bars):
