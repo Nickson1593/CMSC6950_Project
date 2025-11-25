@@ -15,7 +15,7 @@ std_dev_crustal_thickness= np.std(Crustal_Thickness)
 
 #Define Bin Ranges for Crustal Thickness
 bins = [0, 1.4, 2.8, 4.2, 5.6, 7.0, 8.4, 9.8, 11.2]
-bins_labels = ['0-1.4 km', '1.4-2.8 km', '2.8-4.2 km', '4.2-5.6 km', '5.6-7.0 km', '7.0-8.4 km', '8.4-9.8 km', '9.8-11.2 km']
+bins_labels = ['0-1.4', '1.4-2.8', '2.8-4.2', '4.2-5.6', '5.6-7.0', '7.0-8.4', '8.4-9.8', '9.8-11.2']
 
 #Calculate Percentages of Points Within Each Range
 counts, range_edges = np.histogram(Crustal_Thickness, bins=bins)
