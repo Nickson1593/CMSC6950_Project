@@ -12,3 +12,8 @@ fig = make_subplots(rows=2, cols=1,specs=[[{'type':'surface'}],[{'type':'surface
 
 #Create 3D Surface
 fig.add_trace(go.Surface(x=X, y=Y, z=Z, surfacecolor=Slope, colorscale='Picnic', colorbar=dict(title='Slope')), row=1, col=1)
+
+#Update 3D Surface Layout
+fig.update_layout(scene1=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
+                  yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),zaxis=dict(title='Thickness (msec)', range=[0,12000])), width=1000, height=1000)
+fig.update_layout(scene1=dict(aspectmode='manual', aspectratio=dict(x=2,y=2,z=0.75)))
