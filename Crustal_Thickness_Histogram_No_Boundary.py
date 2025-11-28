@@ -46,4 +46,6 @@ for i, bar in enumerate(bars):
     height = bar.get_height()
     ax.text(bar.get_x() + bar.get_width() / 2, height + 1200, f'{Percentages[i]:.1f}%', ha='center', va='bottom', fontsize=14)
 
-
+#Format Layout & Show Plot
+plt.tight_layout()
+plt.show()
