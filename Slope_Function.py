@@ -17,7 +17,7 @@ def surface_slope(Crustal_Thickness_With_Boundary_XYZ):
     X1, Y1 = np.meshgrid(x, y)
     
     #Interpolate Z Values
-    Z1 = griddata((X, Y), Z, (X1, Y1), method = 'cubic')
+    Z1 = griddata((X, Y), Z, (X1, Y1), method = 'linear')
     
     #Smooth Interpolation
     smoothed_Z1 = gaussian_filter(Z1, sigma = 0.8)
