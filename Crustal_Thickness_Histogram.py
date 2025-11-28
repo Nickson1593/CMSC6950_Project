@@ -14,11 +14,11 @@ median_crustal_thickness = np.median(Crustal_Thickness)
 std_dev_crustal_thickness= np.std(Crustal_Thickness)
 
 #Define Bin Ranges for Crustal Thickness
-bins = [0, 1.4, 2.8, 4.2, 5.6, 7.0, 8.4, 9.8, 11.2]
+bins = [0, 1400, 2800, 4200, 5600, 7000, 8400, 9800, 11200]
 bins_labels = ['0-1.4', '1.4-2.8', '2.8-4.2', '4.2-5.6', '5.6-7.0', '7.0-8.4', '8.4-9.8', '9.8-11.2']
 
 #Calculate Percentages of Points Within Each Range
-counts, range_edges = np.histogram(Crustal_Thickness, bins=bins)
+counts, range_edges= np.histogram(Crustal_Thickness, bins=bins)
 Total_Points = len(Crustal_Thickness)
 Percentages = (counts / Total_Points) * 100
 
@@ -32,7 +32,7 @@ ax.set_xlabel('Crustal Thickness (msec)', fontsize=18)
 ax.set_ylabel('Number of Data Points', fontsize=18)
 ax.set_xticks(bins_labels)
 ax.set_xticklabels(bins_labels, rotation=20, fontsize=14)
-ax.tick_params(axis='y', labelsize=14
+ax.tick_params(axis='y', labelsize=14)
 
 #Add Meaninful Statistics to Plot
 ax.axhline(mean_crustal_thickness, color='red', linestyle='-.', linewidth=2, label=f'Mean Crustal Thickness: {mean_crustal_thickness:.2f} msec')
