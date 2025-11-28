@@ -22,4 +22,7 @@ counts, range_edges= np.histogram(Crustal_Thickness, bins=bins)
 Total_Points = len(Crustal_Thickness)
 Percentages = (counts / Total_Points) * 100
 
+#Setup Bar Plot
+fig, ax = plt.subplots(figsize=(12,10))
+
 
