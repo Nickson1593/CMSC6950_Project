@@ -9,3 +9,6 @@ X,Y,Z,Slope = surface_slope('Crustal_Thickness_With_Boundary_XYZ.txt')
 
 #Make Subplots
 fig = make_subplots(rows=2, cols=1,specs=[[{'type':'surface'}],[{'type':'surface'}]], subplot_titles=[('Aspect Ratio 2:2:0.75'),('Aspect Ratio 2:2:0.001')], horizontal_spacing=0.01, vertical_spacing=0.05)
+
+#Create 3D Surface
+fig.add_trace(go.Surface(x=X, y=Y, z=Z, surfacecolor=Slope, colorscale='Picnic', colorbar=dict(title='Slope')), row=1, col=1)
