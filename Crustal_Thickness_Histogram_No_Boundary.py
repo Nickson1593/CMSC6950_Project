@@ -41,4 +41,9 @@ ax.axhline(std_dev_crustal_thickness, color='Orange', linestyle='-', linewidth=2
 
 ax.legend(fontsize=14)
 
+#Add Percentage Values Above Bars
+for i, bar in enumerate(bars):
+    height = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width() / 2, height + 1200, f'{Percentages[i]:.1f}%', ha='center', va='bottom', fontsize=14)
+
 
