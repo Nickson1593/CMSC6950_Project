@@ -23,6 +23,7 @@ plt.figure(figsize=(10,8))
 scatter = plt.scatter(X, Y, c=Z, cmap='Spectral', s=10, edgecolor='None')
 
 #Colorbar Parameters
+plt.colorbar(scatter, label='Crustal Thickness (msec two-way travel time (TWT))')
 cbar = plt.colorbar(scatter, label='Crustal Thickness (msec two-way travel time (TWT))')
 cbar.set_label('Crustal Thickness (msec two-way travel time (TWT))', fontsize = 16)
 cbar.ax.tick_params(labelsize=12)
@@ -32,11 +33,14 @@ contour = plt.contour(X1, Y1, Z1, levels=10, colors='black', linestyles='solid',
 plt.clabel(contour, inline=True, fontsize=10, fmt='%1.0f')
 
 #Set Plot Paramaters
-plt.colorbar(scatter, label='Crustal Thickness (msec two-way travel time (TWT))')
-plt.ticklabel_format(style='plain', axis='x')
-plt.xlabel('Easting', fontsize=14)
-plt.ylabel('Northing', fontsize=14)
-plt.title('Crustal Thickness Map of the Orphan Basin', fontsize=22)
+plt.tick_params(axis = 'x', labelsize = 12)
+plt.tick_params(axis = 'y', labelsize = 12)
+plt.ticklabel_format(style = 'plain', axis = 'x')
+plt.ticklabel_format(style = 'plain', axis = 'y')
+plt.xlabel('Easting (m)', fontsize=16)
+plt.ylabel('Northing (m)', fontsize=16)
+plt.title('Crustal Thickness Map of the Orphan Basin', fontsize=23)
+
 plt.margins(x=0,y=0)
 plt.tight_layout()
 plt.show()
