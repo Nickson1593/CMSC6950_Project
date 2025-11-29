@@ -78,10 +78,10 @@ fig = go.Figure(data=[go.Scatter3d(x=X_2800, y=Y_2800, z=Z_2800, mode='markers',
 fig.update_layout(scene = dict(xaxis = dict(tickmode = 'array', tickvals = xtick_values, ticktext = xtick_text, title = dict(text = 'Easting (m)', font = dict(size = 18)), range = [420000, 995000], tickfont = dict(size = 13)), yaxis = dict(tickmode = 'array', tickvals = ytick_values, ticktext = ytick_text, title = dict(text = 'Northing (m)', font = dict(size = 18)), range = [5180000, 5750000], tickfont = dict(size = 13)), zaxis = dict(tickmode = 'array', tickvals = ztick_values, ticktext = ztick_text, title = dict(text = 'Thickness (msec)', font = dict(size = 18)), range = [0, 3000], tickfont = dict(size = 13))), width = 1000, height = 800)
 
 #Update the Aspect Ratio
-fig.update_layout(scene = dict(aspectmode = 'manual', aspectratio = dict(x = 3, y = 3, z = 1)))
+fig.update_layout(scene = dict(aspectmode = 'manual', aspectratio = dict(x = 3, y = 3, z = 0.7)))
 
 #Set Camera Projection
-fig.update_layout(autosize = True, scene_camera_eye = dict(x = -1.8, y = -3, z = 5))
+fig.update_layout(autosize = True, scene_camera_eye = dict(x = -2, y = -3, z = 5))
 
 #Show Figure
 fig.show()
