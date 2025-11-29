@@ -41,28 +41,27 @@ Rift_masks = data_clean.copy()
 #Establish Z Values from Rift_masks
 Z_mask = Rift_masks[:, 2]
 
-#Create Crustral Thickness Mask for Z Values Above 5000 msec
-threshold = 5000
-Rifts_mask_5000 = Z_mask > threshold
-Rift_masks[Rifts_mask_5000, 2] = np.nan
+#Create Crustral Thickness Mask for Z Values Above 2800 msec
+threshold = 2800
+Rifts_mask_2800 = Z_mask > threshold
+Rift_masks[Rifts_mask_2800, 2] = np.nan
 df_mask = pd.DataFrame(Rift_masks)
 
 #Remove NaN Values Set by Crustal Thickness Mask
-df_5000 = df_mask.dropna()
+df_2800 = df_mask.dropna()
 
 #Save & Load New Masked XYZ File 
-df_5000.to_csv('Rift_Mask_5000.csv', index=False)
-Rifts_5000 = np.loadtxt('Rift_Mask_5000.txt')
+df_2800.to_csv('Rift_Mask_2800.csv', index=False)
+Rifts_2800 = np.loadtxt('Rift_Mask_2800.txt')
 
-#Establish New XYZ Variables for Rift_Mask_5000.txt
-X_5000 = Rifts_5000[:, 0]
-Y_5000 = Rifts_5000[:, 1]
-Z_5000 = Rifts_5000[:, 2]
+#Establish New XYZ Variables for Rift_Mask_2800.txt
+X_2800 = Rifts_2800[:, 0]
+Y_2800 = Rifts_2800[:, 1]
+Z_2800 = Rifts_2800[:, 2]
 
-#Plot 3D Crustal Thickness Data Below 5000 msec (go.Scatter3d)
-fig = go.Figure(data=[go.Scatter3d(x=X_5000, y=Y_5000, z=Z_5000, mode='markers', marker=dict(size=2, color=Z_5000, colorscale='Spectral', colorbar=dict(title='Crustal Thickness below 5000 msec')))])
-fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
-                  yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),zaxis=dict(title='Thickness (msec)', range=[0,15000])), width=1000, height=800)
+#Plot 3D Crustal Thickness Data Below 2800 msec (go.Scatter3d)
+fig = go.Figure(data=[go.Scatter3d(x=X_2800, y=Y_2800, z=Z_2800, mode='markers', marker=dict(size=2, color=Z_2800, colorscale='Spectral', colorbar=dict(title='Crustal Thickness below 2800 msec')))])
+fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]), yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),zaxis=dict(title='Thickness (msec)', range=[0,15000])), width=1000, height=800)
 fig.update_layout(scene=dict(aspectmode='manual', aspectratio=dict(x=2,y=2,z=0.75)))
 fig.show()
 
