@@ -26,7 +26,7 @@ def surface_slope(Crustal_Thickness_With_Boundary_XYZ):
     dzdy, dzdx = np.gradient(smoothed_Z1, y[1] - y[0], x[1] - x[0])
     
     #Calculated Gradients
-    gradient = np.sqrt(dzdy**2 + dzdy**2)
+    gradient = np.sqrt(dzdx**2 + dzdy**2)
     
     #Calculate Slopes
     slope = np.degrees(np.arctan(gradient))
