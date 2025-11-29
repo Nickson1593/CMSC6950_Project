@@ -78,6 +78,9 @@ fig.update_layout(scene=dict(xaxis=dict(tickmode='array', tickvals=xtick_values,
 #Update the Aspect Ratio
 fig.update_layout(scene=dict(aspectmode='manual', aspectratio=dict(x=3,y=3,z=1)))
 
+#Set Camera Projection
+fig.update_layout(autosize=True, scene_camera_eye=dict(x=-1.8, y=-3, z=5))
+
 #Show Figure
 fig.show()
 
