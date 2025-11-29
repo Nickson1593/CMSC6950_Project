@@ -57,6 +57,16 @@ Z1_clean = griddata(coordinates_clean, Z_clean, (X1, Y1), method='linear')
 #Smooth Interpolation
 smoothed_Z1_clean = gaussian_filter(Z1_clean, sigma=0.2)
 
+#Define Tick Values
+xtick_values = [400000, 500000, 600000, 700000, 800000, 900000, 1000000]
+xtick_text = ['400000', '500000', '600000', '700000', '800000', '900000', '1000000']
+
+ytick_values = [5100000, 5200000, 5300000, 5400000, 5500000, 5600000, 5700000, 5800000]
+ytick_text = ['5100000', '5200000', '5300000', '5400000', '5500000', '5600000', '5700000', '5800000']
+
+ztick_values = [10000, 8000, 6000, 4000, 2000, 0]
+ztick_text = ['10000', '8000', '6000', '4000', '2000', '0']
+
 #Create 3D Surface Using Plotly
 fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1_clean,colorscale='spectral', colorbar=dict(title='Crustal Thickness (msec)'), contours={"z":{"show":True}})])
 
