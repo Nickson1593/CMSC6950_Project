@@ -33,7 +33,7 @@ df_cleaned = df.dropna()
 
 #Save & Load New XYZ File 
 df_cleaned.to_csv('cleaned_XYZ.csv', index=False)
-data_clean = np.loadtxt('cleaned_XYZ.txt')
+data_clean = np.loadtxt('Crustal_Thickness_With_Boundary_XYZ.txt')
 
 #Make Copy of Masked Crustal Thickness Data to Apply Thickness Mask
 Rift_masks = data_clean.copy()
