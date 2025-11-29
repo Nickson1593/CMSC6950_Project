@@ -27,7 +27,6 @@ fig, ax = plt.subplots(figsize=(12,10))
 
 #Plot "Count of Data Points for Ranges of Unmasked Crustal Thickness"
 bars = ax.bar (bins_labels, counts, color='blue', edgecolor='black', width = 0.9)
-ax.set_title('Count of Data Points for Ranges of Unmasked Crustal Thickness', fontsize=24)
 ax.set_xlabel('Crustal Thickness (msec)', fontsize=18)
 ax.set_ylabel('Number of Data Points', fontsize=18)
 ax.set_xticks(bins_labels)
