@@ -69,7 +69,7 @@ ytick_text = ['5100000', '5200000', '5300000', '5400000', '5500000', '5600000', 
 ztick_values = [3000, 2000, 1000, 0]
 ztick_values_colorbar = [3000, 2500, 2000, 1500, 1000, 500]
 ztick_text = [ '3000', '2000', '1000', '0']
-ztick_text = [ '3000', '2500', '2000', '1500', '1000', '500']
+ztick_text_colorbar = [ '3000', '2500', '2000', '1500', '1000', '500']
 
 #Plot 3D Crustal Thickness Data Below 2800 msec (go.Scatter3d)
 fig = go.Figure(data=[go.Scatter3d(x=X_2800, y=Y_2800, z=Z_2800, mode='markers', marker=dict(size=1, color=Z_2800, colorscale='Spectral', colorbar=dict(tickvals=ztick_values_colorbar, ticktext=ztick_text_colorbar,title_side='right', title=dict(text='Crustal Thickness Below 2800 msec', font=dict(size=20)),tickfont=dict(size=16))))])
