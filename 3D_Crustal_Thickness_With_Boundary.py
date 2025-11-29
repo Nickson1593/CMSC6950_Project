@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 from scipy.interpolate import griddata
 from scipy.ndimage import gaussian_filter
 import pandas as pd
+from matplotlib.path import Path
 
 #Load Crustal Thickness data from file
 data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
