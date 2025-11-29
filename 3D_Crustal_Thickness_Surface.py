@@ -4,10 +4,6 @@ import plotly.graph_objects as go
 from scipy.interpolate import griddata
 from scipy.ndimage import gaussian_filter
 
-# Set fonts
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif', size=15)
-
 # Load data from file
 data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
 
@@ -15,6 +11,7 @@ data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
 X = data[:, 0]
 Y = data[:, 1]
 Z = data[:, 2]
+coordinates = data[:, :2]
 
 #Create X, Y Mesh
 x = np.linspace(X.min(), X.max(), 50)
@@ -22,13 +19,13 @@ y = np.linspace(Y.min(), Y.max(), 50)
 X1, Y1 = np.meshgrid(x, y)
 
 #Apply Z-Values to XY Mesh
-Z1 = griddata(coordinates, Z, (X1, Y1), method='cubic')
+Z1 = griddata(coordinates, Z, (X1, Y1), method='linear')
 
 #Apply Gaussian Filter to Smooth Z1
 smoothed_Z1 = gaussian_filter(Z1, sigma=0.2)
 
 #Create 3D Surface Using Plotly
-fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='Spectral', colorbar=dict(title='Crustal Thickness (msec)'))])])
+fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='Spectral', colorbar=dict(title='Crustal Thickness (msec)'))])
 
 #Update the 3D Surface Layout 
 fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
