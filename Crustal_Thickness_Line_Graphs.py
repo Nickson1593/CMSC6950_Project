@@ -17,4 +17,7 @@ Z1 = df['Z1']
 Z2 = df['Z2']
 Z3 = df['Z3']
 
+#Define Initial Thickness of Undeformed Crust
+initial_thickness = 10557.39883
+
 
