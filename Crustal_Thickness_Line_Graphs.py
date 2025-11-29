@@ -37,7 +37,9 @@ fig, axs = plt.subplots(3, 1, figsize=(16,14), sharex=True)
 #Plot Line 1
 ax1 = axs[0]
 ax1.tick_params(axis='x', labelsize=14)
+ax1.tick_params(axis='y', labelsize=14)
 ax1.set_xlabel('Easting (m)', fontsize=18)
+ax1.set_ylabel('Crustal Thickness (msec)', fontsize=18)
 line1, = ax1.plot(df['X1'], df['Z1'], color='red', label='Crustal Thickness')
 ax1_twin = ax1.twinx()
 ax1_twin.set_ylabel('Stretching Factor', fontsize=18)
@@ -47,12 +49,14 @@ line2, = ax1_twin.plot(df['X1'], clipped_stretching_factor_Z1, color='red', line
 #Lines 1 & 2 Legend
 lines = [line1, line2]
 labels = [l.get_label() for l in lines] 
-ax1.legend(lines, labels, loc='best') 
+ax1.legend(lines, labels, loc='upper left', fontsize = 14) 
 
 #Plot Line 2
 ax2 = axs[1]
 ax2.tick_params(axis='x', labelsize=14)
+ax2.tick_params(axis='y', labelsize=14)
 ax2.set_xlabel('Easting (m)', fontsize=18)
+ax2.set_ylabel('Crustal Thickness (msec)', fontsize=18)
 line3, = ax2.plot(df['X2'], df['Z2'], color='orange', label='Crustal Thickness')
 ax2_twin = ax2.twinx()
 ax2_twin.set_ylabel('Stretching Factor', fontsize=18)
@@ -62,12 +66,15 @@ line4, = ax2_twin.plot(df['X2'], clipped_stretching_factor_Z2, color='orange', l
 #Lines 3 & 4 Legend
 lines = [line3, line4]
 labels = [l.get_label() for l in lines] 
-ax2.legend(lines, labels, loc='best') 
+ax2.legend(lines, labels, loc='upper left', fontsize = 14) 
 
 #Plot Lines 5 & 6
 ax3 = axs[2]
 ax3.tick_params(axis='x', labelsize=14)
+ax3.tick_params(axis='y', labelsize=14)
 ax3.set_xlabel('Easting (m)', fontsize=18)
+ax3.set_ylabel('Crustal Thickness (msec)', fontsize=18)
+ax3.tick_params(axis='y', labelsize=14)
 line5, = ax3.plot(df['X3'], df['Z3'], color='blue', label='Crustal Thickness')
 ax3_twin = ax3.twinx()
 ax3_twin.set_ylabel('Stretching Factor', fontsize=18)
@@ -77,7 +84,7 @@ line6, = ax3_twin.plot(df['X3'], clipped_stretching_factor_Z3, color='blue', lin
 #Lines 5 & 6 Legend
 lines = [line5, line6]
 labels = [l.get_label() for l in lines] 
-ax3.legend(lines, labels, loc='best') 
+ax3.legend(lines, labels, loc='upper left', fontsize = 14) 
 
 #Format Layout
 plt.tight_layout()
