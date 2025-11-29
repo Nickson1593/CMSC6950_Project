@@ -15,6 +15,8 @@ x = np.linspace(X.min(), X.max(), 100)
 y = np.linspace(Y.min(), Y.max(), 100)
 X1, Y1 = np.meshgrid(x, y)
 
+#Interpolate Z Values
+Z1 = griddata((X, Y), Z, (X1,Y1), method='linear')
 
 #Create Scatter Plot
 plt.figure(figsize=(10,8))
