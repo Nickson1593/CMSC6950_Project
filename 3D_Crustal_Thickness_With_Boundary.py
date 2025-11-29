@@ -69,13 +69,11 @@ ztick_values = [10000, 8000, 6000, 4000, 2000, 0]
 ztick_text = ['10000', '8000', '6000', '4000', '2000', '0']
 
 #Create 3D Surface Using Plotly
-fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1_clean,colorscale='spectral', colorbar=dict(title='Crustal Thickness (msec)'), contours={"z":{"show":True}})])
+fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1_clean,colorscale='Spectral', colorbar=dict(tickvals=ztick_values, ticktext=ztick_text,title_side='right', title=dict(text='Crustal Thickness (msec)', font=dict(size=20)),tickfont=dict(size=16)), contours = {"z":{"show": True, "start": 0, "end": 11000, "size": 1500}})])
 
 #Update the 3D Surface Layout 
-fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
-                  yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),
-                  zaxis=dict(title='Thickness (msec)', range=[0,15850])), 
-                  width=1000, height=800)
+fig.update_layout(scene=dict(xaxis=dict(tickmode='array', tickvals=xtick_values, ticktext=xtick_text, title=dict(text='Easting (m)', font=dict(size=18)), range=[420000, 995000], tickfont=dict(size=13)),
+                  yaxis=dict(tickmode='array', tickvals=ytick_values, ticktext=ytick_text, title=dict(text='Northing (m)', font=dict(size=18)), range=[5180000, 5750000], tickfont=dict(size=13)),zaxis=dict(tickmode='array', tickvals=ztick_values, ticktext=ztick_text, title=dict(text='Thickness (msec)', font=dict(size=18)), range=[0,11000], tickfont=dict(size=13))), width=1000, height=800)
                   
 #Update the Aspect Ratio
 fig.update_layout(scene=dict(aspectmode='manual', aspectratio=dict(x=2,y=2,z=0.75)))
