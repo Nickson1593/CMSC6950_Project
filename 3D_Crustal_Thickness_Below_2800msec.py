@@ -60,12 +60,26 @@ X_2800 = Rifts_2800[:, 0]
 Y_2800 = Rifts_2800[:, 1]
 Z_2800 = Rifts_2800[:, 2]
 
+xtick_values = [400000, 500000, 600000, 700000, 800000, 900000, 1000000]
+xtick_text = ['400000', '500000', '600000', '700000', '800000', '900000', '1000000']
+
+ytick_values = [5100000, 5200000, 5300000, 5400000, 5500000, 5600000, 5700000, 5800000]
+ytick_text = ['5100000', '5200000', '5300000', '5400000', '5500000', '5600000', '5700000', '5800000']
+
+ztick_values = [3000, 2500, 2000, 1500, 1000, 500]
+ztick_text = [ '3000', '2500', '2000', '1500', '1000', '500']
+
 #Plot 3D Crustal Thickness Data Below 2800 msec (go.Scatter3d)
-fig = go.Figure(data=[go.Scatter3d(x=X_2800, y=Y_2800, z=Z_2800, mode='markers', marker=dict(size=2, color=Z_2800, colorscale='Spectral', colorbar=dict(title='Crustal Thickness below 2800 msec')))])
-fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]), yaxis=dict(title='Northing (m)', range=[5100000, 5800000]),zaxis=dict(title='Thickness (msec)', range=[0,15000])), width=1000, height=800)
-fig.update_layout(scene=dict(aspectmode='manual', aspectratio=dict(x=2,y=2,z=0.75)))
+fig = go.Figure(data=[go.Scatter3d(x=X_2800, y=Y_2800, z=Z_2800, mode='markers', marker=dict(size=1, color=Z_2800, colorscale='Spectral', colorbar=dict(tickvals=ztick_values_colorbar, ticktext=ztick_text_colorbar,title_side='right', title=dict(text='Crustal Thickness Below 2800 msec', font=dict(size=20)),tickfont=dict(size=16)))])
+
+#Format Layout
+fig.update_layout(scene = dict(xaxis = dict(tickmode = 'array', tickvals = xtick_values, ticktext = xtick_text, title = dict(text = 'Easting (m)', font = dict(size = 18)), range = [420000, 995000], tickfont = dict(size = 13)), yaxis = dict(tickmode = 'array', tickvals = ytick_values, ticktext = ytick_text, title = dict(text = 'Northing (m)', font = dict(size = 18)), range = [5180000, 5750000], tickfont = dict(size = 13)), zaxis = dict(tickmode = 'array', tickvals = ztick_values, ticktext = ztick_text, title = dict(text = 'Thickness (msec)', font = dict(size = 18)), range = [0, 3000], tickfont = dict(size = 13))), width = 1000, height = 800)
+
+#Update the Aspect Ratio
+fig.update_layout(scene = dict(aspectmode = 'manual', aspectratio = dict(x = 3, y = 3, z = 1)))
+
+#Set Camera Projection
+fig.update_layout(autosize = True, scene_camera_eye = dict(x = -1.8, y = -3, z = 5))
+
+#Show Figure
 fig.show()
-
-
-
-
