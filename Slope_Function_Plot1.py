@@ -3,6 +3,7 @@
 
 import plotly.graph_objects as go
 
+#Define Tick Values
 xtick_values = [400000, 500000, 600000, 700000, 800000, 900000, 1000000]
 xtick_text = ['400000', '500000', '600000', '700000', '800000', '900000', '1000000']
 
