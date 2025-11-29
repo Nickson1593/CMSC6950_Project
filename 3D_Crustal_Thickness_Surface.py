@@ -37,7 +37,7 @@ ztick_text = [ '14000', '10000', '6000', '2000']
 ztick_text_colorbar = ['14000', '12000', '10000', '8000', '6000', '4000', '2000']
 
 #Create 3D Surface Using Plotly
-fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='Spectral', colorbar=dict(title='Crustal Thickness (msec)'))])
+fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='Spectral', colorbar=dict(tickvals=ztick_values_colorbar, ticktext=ztick_text_colorbar,title_side='right', title=dict(text='Crustal Thickness (msec)', font=dict(size=20)),tickfont=dict(size=16)), contours = {"z":{"show": True, "start": 0, "end": 15848, "size": 1500}})])
 
 #Update the 3D Surface Layout 
 fig.update_layout(scene=dict(xaxis=dict(title='Easting (m)', range=[420000, 995000]),
