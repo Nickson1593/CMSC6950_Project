@@ -24,6 +24,18 @@ Z1 = griddata(coordinates, Z, (X1, Y1), method='linear')
 #Apply Gaussian Filter to Smooth Z1
 smoothed_Z1 = gaussian_filter(Z1, sigma=0.2)
 
+#Define Tick Values
+xtick_values = [400000, 500000, 600000, 700000, 800000, 900000, 1000000]
+xtick_text = ['400000', '500000', '600000', '700000', '800000', '900000', '1000000']
+
+ytick_values = [5100000, 5200000, 5300000, 5400000, 5500000, 5600000, 5700000, 5800000]
+ytick_text = ['5100000', '5200000', '5300000', '5400000', '5500000', '5600000', '5700000', '5800000']
+
+ztick_values = [14000, 10000, 6000, 2000]
+ztick_values_colorbar = [14000, 12000, 10000, 8000, 6000, 4000, 2000]
+ztick_text = [ '14000', '10000', '6000', '2000']
+ztick_text_colorbar = ['14000', '12000', '10000', '8000', '6000', '4000', '2000']
+
 #Create 3D Surface Using Plotly
 fig = go.Figure(data=[go.Surface(x=X1, y=Y1, z=smoothed_Z1,colorscale='Spectral', colorbar=dict(title='Crustal Thickness (msec)'))])
 
