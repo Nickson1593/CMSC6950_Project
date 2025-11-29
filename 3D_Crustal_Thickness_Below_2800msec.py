@@ -81,7 +81,7 @@ fig.update_layout(scene = dict(xaxis = dict(tickmode = 'array', tickvals = xtick
 fig.update_layout(scene = dict(aspectmode = 'manual', aspectratio = dict(x = 3, y = 3, z = 0.7)))
 
 #Set Camera Projection
-fig.update_layout(autosize = True, scene_camera_eye = dict(x = -2, y = -3, z = 5))
+fig.update_layout(autosize = True, scene_camera_eye = dict(x = -1, y = -2, z = 5))
 
 #Show Figure
 fig.show()
