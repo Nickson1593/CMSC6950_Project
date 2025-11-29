@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.interpolate import griddata
 
 #Load Data File
 data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
@@ -8,6 +9,12 @@ data = np.loadtxt('Crustal_Thickness_CMSC6950.txt')
 X = data[:, 0]
 Y = data[:, 1]
 Z = data[:, 2]
+
+#Create a Mesh Grid 
+x = np.linspace(X.min(), X.max(), 100)
+y = np.linspace(Y.min(), Y.max(), 100)
+X1, Y1 = np.meshgrid(x, y)
+
 
 #Create Scatter Plot
 plt.figure(figsize=(10,8))
