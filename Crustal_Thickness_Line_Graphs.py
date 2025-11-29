@@ -25,4 +25,8 @@ stretching_factor_Z1 = initial_thickness / df['Z1']
 stretching_factor_Z2 = initial_thickness / df['Z2']
 stretching_factor_Z3 = initial_thickness / df['Z3']
 
-
+#Set Maximum Stretching Factor
+max_stretching_factor = 7.0
+clipped_stretching_factor_Z1 = np.clip(stretching_factor_Z1, a_min=None, a_max=max_stretching_factor)
+clipped_stretching_factor_Z2 = np.clip(stretching_factor_Z2, a_min=None, a_max=max_stretching_factor)
+clipped_stretching_factor_Z3 = np.clip(stretching_factor_Z3, a_min=None, a_max=max_stretching_factor)
