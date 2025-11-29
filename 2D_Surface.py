@@ -41,6 +41,7 @@ plt.xlabel('Easting (m)', fontsize=16)
 plt.ylabel('Northing (m)', fontsize=16)
 plt.title('Crustal Thickness Map of the Orphan Basin', fontsize=23)
 
+#Plot Format
 plt.margins(x=0,y=0)
 plt.tight_layout()
 plt.show()
