@@ -23,7 +23,7 @@ plt.figure(figsize=(10,8))
 scatter = plt.scatter(X, Y, c = Z, cmap = 'Spectral', s = 10, edgecolor = 'None')
 
 #Colorbar Parameters
-cbar = plt.colorbar(scatter, label = 'Crustal Thickness (msec two-way travel time (TWT))')
+cbar = plt.colorbar(scatter, label = 'Crustal Thickness (msec)')
 cbar.set_label('Crustal Thickness (msec)', fontsize = 16)
 cbar.ax.tick_params(labelsize = 12)
 
