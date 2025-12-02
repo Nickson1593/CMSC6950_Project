@@ -38,7 +38,6 @@ plt.ticklabel_format(style = 'plain', axis = 'x')
 plt.ticklabel_format(style = 'plain', axis = 'y')
 plt.xlabel('Easting (m)', fontsize = 16)
 plt.ylabel('Northing (m)', fontsize = 16)
-plt.title('Crustal Thickness Map of the Orphan Basin', fontsize = 23)
 
 #Plot Format
 plt.margins(x = 0, y = 0)
