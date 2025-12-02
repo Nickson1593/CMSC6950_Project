@@ -24,7 +24,7 @@ scatter = plt.scatter(X, Y, c = Z, cmap = 'Spectral', s = 10, edgecolor = 'None'
 
 #Colorbar Parameters
 cbar = plt.colorbar(scatter, label = 'Crustal Thickness (msec two-way travel time (TWT))')
-cbar.set_label('Crustal Thickness (msec two-way travel time (TWT))', fontsize = 16)
+cbar.set_label('Crustal Thickness (msec)', fontsize = 16)
 cbar.ax.tick_params(labelsize = 12)
 
 #Create Surface Contours
