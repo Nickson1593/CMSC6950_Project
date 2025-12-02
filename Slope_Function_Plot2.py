@@ -1,6 +1,4 @@
-#Load Slope Function
-%load Slope_Function.py
-
+from Slope_Function import surface_slope
 import plotly.graph_objects as go
 
 #Define Tick Values
@@ -14,7 +12,7 @@ ytick_text = ['5100000', '5200000', '5300000', '5400000', '5500000', '5600000', 
 X,Y,Z,Slope = surface_slope('Crustal_Thickness_With_Boundary_XYZ.txt')
 
 #Create 3D Surface
-ig = go.Figure(data = [go.Surface(x = X, y = Y, z = Z, surfacecolor = Slope, colorscale = 'Picnic', colorbar = dict( title_side = 'right', title = dict(text = 'Slope', font = dict(size = 20)),tickfont = dict(size = 16)))])
+fig = go.Figure(data = [go.Surface(x = X, y = Y, z = Z, surfacecolor = Slope, colorscale = 'Picnic', colorbar = dict( title_side = 'right', title = dict(text = 'Slope', font = dict(size = 20)),tickfont = dict(size = 16)))])
 
 #Update 3D Surface Layout
 fig.update_layout(scene = dict(xaxis = dict(tickmode = 'array', tickvals = xtick_values, ticktext = xtick_text, title = dict(text = 'Easting (m)', font = dict(size = 18)), range = [420000, 995000], tickfont = dict(size = 13)), yaxis = dict(tickmode = 'array', tickvals = ytick_values, ticktext = ytick_text, title = dict(text = 'Northing (m)', font = dict(size = 18)), range = [5180000, 5750000], tickfont = dict(size = 13)), zaxis = dict(title = '', showticklabels=False)), width = 1000, height = 800)
