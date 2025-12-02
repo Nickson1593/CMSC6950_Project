@@ -1,0 +1,34 @@
+#Import stretching_factor_calculation from Stretching_Factor_Function.py or use %load Stretching_Factor_Function.py and run the script before this one
+from Stretching_Factor_Function import stretching_factor_calculation
+#Import Library
+import plotly.graph_objects as go
+
+input_data = np.loadtxt("Crustal_Thickness_With_Boundary_XYZ.txt")
+
+#Define Tick Values
+xtick_values = [400000, 500000, 600000, 700000, 800000, 900000, 1000000]
+xtick_text = ['400000', '500000', '600000', '700000', '800000', '900000', '1000000']
+
+ytick_values = [5100000, 5200000, 5300000, 5400000, 5500000, 5600000, 5700000, 5800000]
+ytick_text = ['5100000', '5200000', '5300000', '5400000', '5500000', '5600000', '5700000', '5800000']
+
+ztick_values = [10000, 8000, 6000, 4000, 2000, 0]
+ztick_text = ['10000', '8000', '6000', '4000', '2000', '0']
+
+#Define Variables Using Stretching Factor Function
+X,Y,Z,clipped_stretching_factor = stretching_factor_calculation(input_data)
+
+#Create 3D Surface
+fig = go.Figure(data = [go.Surface(x = X, y = Y, z = Z, surfacecolor = clipped_stretching_factor, colorscale = 'Picnic', colorbar = dict( title_side = 'right', title = dict(text = 'Stretching Factor', font = dict(size = 20)),tickfont = dict(size = 16)))])
+
+#Update 3D Surface Layout
+fig.update_layout(scene = dict(xaxis = dict(tickmode = 'array', tickvals = xtick_values, ticktext = xtick_text, title = dict(text = 'Easting (m)', font = dict(size = 18)), range = [420000, 995000], tickfont = dict(size = 13)), yaxis = dict(tickmode = 'array', tickvals = ytick_values, ticktext = ytick_text, title = dict(text = 'Northing (m)', font = dict(size = 18)), range = [5180000, 5750000], tickfont = dict(size = 13)), zaxis = dict(tickmode = 'array', tickvals = ztick_values, ticktext = ztick_text, title = dict(text = 'Thickness (msec)', font = dict(size = 18)), range = [0, 11000], tickfont = dict(size = 13))), width = 1000, height = 800)
+
+#Set Aspect Ratio
+fig.update_layout(scene = dict(aspectmode = 'manual', aspectratio = dict(x = 3, y = 3, z = 1)))
+
+#Set Camera Projection
+fig.update_layout(autosize = True, scene_camera_eye = dict(x = -1.2, y = -2, z = 6))
+
+#Show Figure
+fig.show()
