@@ -1,4 +1,6 @@
+#Import surface_slope from Slope_Function.py or use %load Slope_Function.py and run the script before this one
 from Slope_Function import surface_slope
+#Import Library
 import plotly.graph_objects as go
 
 #Define Tick Values
