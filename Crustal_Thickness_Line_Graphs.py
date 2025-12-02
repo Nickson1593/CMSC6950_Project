@@ -43,7 +43,7 @@ line1, = ax1.plot(df['X1'], df['Z1'], color='red', label='Crustal Thickness')
 ax1_twin = ax1.twinx()
 ax1_twin.set_ylabel('Stretching Factor', fontsize=18)
 ax1_twin.tick_params(axis='y', labelsize=14)
-line2, = ax1_twin.plot(df['X1'], clipped_stretching_factor_Z1, color='red', linestyle='--', label='Stretching Factor')
+line2, = ax1_twin.plot(df['X1'], clipped_stretching_factor_Z1, color='fuchsia', linestyle='--', label='Stretching Factor')
 
 #Lines 1 & 2 Legend
 lines = [line1, line2]
@@ -59,7 +59,7 @@ line3, = ax2.plot(df['X2'], df['Z2'], color='orange', label='Crustal Thickness')
 ax2_twin = ax2.twinx()
 ax2_twin.set_ylabel('Stretching Factor', fontsize=18)
 ax2_twin.tick_params(axis='y', labelsize=14)
-line4, = ax2_twin.plot(df['X2'], clipped_stretching_factor_Z2, color='orange', linestyle='--', label='Stretching Factor')
+line4, = ax2_twin.plot(df['X2'], clipped_stretching_factor_Z2, color='fuchsia', linestyle='--', label='Stretching Factor')
 
 #Lines 3 & 4 Legend
 lines = [line3, line4]
@@ -77,7 +77,7 @@ line5, = ax3.plot(df['X3'], df['Z3'], color='blue', label='Crustal Thickness')
 ax3_twin = ax3.twinx()
 ax3_twin.set_ylabel('Stretching Factor', fontsize=18)
 ax3_twin.tick_params(axis='y', labelsize=14)
-line6, = ax3_twin.plot(df['X3'], clipped_stretching_factor_Z3, color='blue', linestyle='--', label='Stretching Factor')
+line6, = ax3_twin.plot(df['X3'], clipped_stretching_factor_Z3, color='fuchsia', linestyle='--', label='Stretching Factor')
 
 #Lines 5 & 6 Legend
 lines = [line5, line6]
