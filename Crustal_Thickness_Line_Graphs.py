@@ -3,8 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 '#Read Crustal Thickness data from file'
-df = pd.read_csv('Crustal_Thickness_Supplementary_Data.csv',
-                 sep='\s+', header=None)
+df = pd.read_csv('Crustal_Thickness_Supplementary_Data.csv', header=None)
 
 '#Define Data Columns'
 df.columns = ['X1', 'Y1', 'Z1', 'X2', 'Y2', 'Z2', 'X3', 'Y3', 'Z3']
