@@ -3,7 +3,7 @@ import numpy as np
 import pytest
 import os
 
-#Identify edge, middle cases
+'#Identify edge, middle cases'
 @pytest.mark.parametrize("input_data, expected_mean_stretching_factor",
     			[(np.array([[0, 0, 0.1], [1, 1, 0.2], [0, 1, 0.1], [1, 0, 0.2]]), 7.0),
     			(np.array([[1, 10, 10550], [3, 15, 10560], [1, 12, 10555], [3, 14, 10555]]), 1.0),
@@ -13,8 +13,8 @@ def test_stretching_factor_calculation(input_data, expected_mean_stretching_fact
         
         _, _, _, stretching_factor_array = stretching_factor_calculation(input_data)
         
-        #Calculate the actual mean stretching factor over the grid
+        '#Calculate the actual mean stretching factor over the grid'
         actual_mean_stretching_factor = np.nanmean(stretching_factor_array)
         
-        #mean actual slope isclose to expected mean slope with a tolerance of 0.1
+        '#mean actual slope isclose to expected mean slope with a tolerance of 0.1'
         assert np.isclose(actual_mean_stretching_factor, expected_mean_stretching_factor, atol=0.5)
