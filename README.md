@@ -34,9 +34,9 @@ Although the line of code to save the figure as a pdf is not included in any of 
 
 To reproduce the crustal thickness histogram in section 3.4 of the project report, the Python libraries Numpy, Pandas, and Matplotlib must be installed on your system. If they are not installed, use "pip install numpy", "pip install pandas", and "python -m pip install -U matplotlib" in a terminal window. 
 
-The next step is to download the XYZ dataset "Crustal_Thickness_CMSC6950.txt" and Python script "Crustal_Thickness_Bar_Graph_No_Boundary.py" from the GitHub Repository https://github.com/Nickson1593/CMSC6950_Project.git. Ensure that both of these files are saved in the same directory on your system.
+The next step is to download the XYZ dataset "Crustal_Thickness_CMSC6950.txt" and Python script "Crustal_Thickness_Histogram_No_Boundary.py" from the GitHub Repository https://github.com/Nickson1593/CMSC6950_Project.git. Ensure that both of these files are saved in the same directory on your system.
 
-Next, open a terminal window and navigate to the directory that contains the previously saved files using "cd project/path" where "project/path" is the location of the files. To reproduce the figure, run the line "python Crustal_Thickness_Bar_Graph_No_Boundary.py" from the terminal. Note: The figure can also be reproduced in a Jupyter Notebook by ensuring the files are saved in the same location as the Notebook and running the line "%load Crustal_Thickness_Bar_Graph_No_Boundary.py" in a new cell. 
+Next, open a terminal window and navigate to the directory that contains the previously saved files using "cd project/path" where "project/path" is the location of the files. To reproduce the figure, run the line "python Crustal_Thickness_Histogram_No_Boundary.py" from the terminal. Note: The figure can also be reproduced in a Jupyter Notebook by ensuring the files are saved in the same location as the Notebook and running the line "%load Crustal_Thickness_Histogram_No_Boundary.py" in a new cell. 
 
 Although the line of code to save the figure as a pdf is not included in any of the Python scripts, the figure can be saved as a pdf by adding the line plt.savefig("name_of_file.pdf") to the script, above plt.show().
 
@@ -44,9 +44,9 @@ Although the line of code to save the figure as a pdf is not included in any of 
 
 To reproduce the crustal thickness histogram in section 3.5 of the project report, the Python libraries Numpy, Pandas, and Matplotlib must be installed on your system. If they are not installed, use "pip install numpy", "pip install pandas", and "python -m pip install -U matplotlib" in a terminal window. 
 
-The next step is to download the XYZ dataset "Crustal_Thickness_With_Boundary_XYZ.txt" and Python script "Crustal_Thickness_Bar_Graph.py" from the GitHub Repository https://github.com/Nickson1593/CMSC6950_Project.git. Ensure that both of these files are saved in the same directory on your system.
+The next step is to download the XYZ dataset "Crustal_Thickness_With_Boundary_XYZ.txt" and Python script "Crustal_Thickness_Histogram.py" from the GitHub Repository https://github.com/Nickson1593/CMSC6950_Project.git. Ensure that both of these files are saved in the same directory on your system.
 
-Next, open a terminal window and navigate to the directory that contains the previously saved files using "cd project/path" where "project/path" is the location of the files. To reproduce the figure, run the line "python Crustal_Thickness_Bar_Graph.py" from the terminal. Note: The figure can also be reproduced in a Jupyter Notebook by ensuring the files are saved in the same location as the Notebook and the running the line "%load Crustal_Thickness_Bar_Graph.py" in a new cell.
+Next, open a terminal window and navigate to the directory that contains the previously saved files using "cd project/path" where "project/path" is the location of the files. To reproduce the figure, run the line "python Crustal_Thickness_Histogram.py" from the terminal. Note: The figure can also be reproduced in a Jupyter Notebook by ensuring the files are saved in the same location as the Notebook and the running the line "%load Crustal_Thickness_Histogram.py" in a new cell.
 
 Although the line of code to save the figure as a pdf is not included in any of the Python scripts, the figure can be saved as a pdf by adding the line plt.savefig("name_of_file.pdf") to the script, above plt.show().
 
